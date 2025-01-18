@@ -1,6 +1,6 @@
 class CalcController {
 
-    constructor(){
+    constructor() {
 
         this._locale = 'pt-BR';
         this._displayCalcEl = document.querySelector("#display");
@@ -11,11 +11,11 @@ class CalcController {
 
     }
 
-    initialize(){
+    initialize() {
 
         this.setDisplayDateTime()
 
-        setInterval(()=>{
+        setInterval(() => {
 
             this.setDisplayDateTime();
 
@@ -23,7 +23,7 @@ class CalcController {
 
     }
 
-    setDisplayDateTime(){
+    setDisplayDateTime() {
 
         this.displayDate = this.currentDate.toLocaleDateString(this._locale, {
             day: "2-digit",
@@ -34,49 +34,58 @@ class CalcController {
 
     }
 
-    get displayTime(){
+    initButtonsEvents() {
+        /*
+            O "querySelector()" traz somente a primeira ocorrência.
+            O "querySelectorAll()" traz todas as ocorrências
+        */
+        let buttons = document.querySelectorAll("#buttons > g, $parts > g");
+
+    }
+
+    get displayTime() {
 
         return this._timeEl.innerHTML;
 
     }
 
-    set displayTime(value){
+    set displayTime(value) {
 
         return this._timeEl.innerHTML = value;
 
     }
 
-    get displayDate(){
+    get displayDate() {
 
         return this._dateEl.innerHTML;
 
     }
 
-    set displayDate(value){
+    set displayDate(value) {
 
         return this._dateEl.innerHTML = value;
 
     }
 
-    get displayCalc(){
+    get displayCalc() {
 
         return this._displayCalcEl.innerHTML;
 
     }
 
-    set displayCalc(value){
+    set displayCalc(value) {
 
         this._displayCalcEl.innerHTML = value;
 
     }
 
-    get currentDate(){
+    get currentDate() {
 
         return new Date();
 
     }
 
-    set currentDate(value){
+    set currentDate(value) {
 
         this._currentDate = value;
 
