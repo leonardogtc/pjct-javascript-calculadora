@@ -1,2 +1,2 @@
 // Criando instancia da CalcControler
-let calculadora = new CalcController;
+let calculadora = new CalcController();
