@@ -8,6 +8,7 @@ class CalcController {
         this._timeEl = document.querySelector("#hora");
         this._currentDate;
         this.initialize();
+        this.initButtonsEvents();
 
     }
 
@@ -39,7 +40,14 @@ class CalcController {
             O "querySelector()" traz somente a primeira ocorrência.
             O "querySelectorAll()" traz todas as ocorrências
         */
-        let buttons = document.querySelectorAll("#buttons > g, $parts > g");
+        let buttons = document.querySelectorAll("#buttons > g, #parts > g");
+
+        // Adicionar o evento de 'click' aos botões
+        buttons.forEach((btn, index) => {
+            btn.addEventListener('click', e => {
+                console.log(btn.className.baseVal.replace("btn-", ""));
+            });
+        });
 
     }
 
